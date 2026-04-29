@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import MainLayout from '../layout/MainLayout'
 import Home from '../pages/Home'
+import About from '../pages/About'
 
 const EmptyPage = () => null
 
@@ -11,7 +12,7 @@ function AppRouter() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<EmptyPage />} />
-          <Route path="/about" element={<EmptyPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<EmptyPage />} />
           <Route path="/dashboard" element={<EmptyPage />} />
         </Route>

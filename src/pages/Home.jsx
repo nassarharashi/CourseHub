@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom'
 import Container from '../components/Container'
+import HeroSection from '../components/HeroSection'
+import FeatureCard from '../components/FeatureCard'
+import TestimonialCard from '../components/TestimonialCard'
+import PricingCard from '../components/PricingCard'
 
 const features = [
   {
@@ -22,7 +26,7 @@ const features = [
   {
     title: 'Progress Tracking',
     description:
-      'Stay motivated with clear milestones and a simple view of your progress.',
+      'Clear milestones and learning stats to keep momentum going strong.',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -32,14 +36,14 @@ const features = [
         strokeWidth="1.8"
         aria-hidden="true"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12l4 4L19 6" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 19V5m6 14V9m6 10V7" />
       </svg>
     ),
   },
   {
-    title: 'Simple Management',
+    title: 'Flexible Learning',
     description:
-      'Organize lessons, track completion, and keep everything in one place.',
+      'Stay consistent with a clean experience built for modern schedules.',
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -52,110 +56,69 @@ const features = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M4 7h16M4 12h16M4 17h10"
+          d="M12 6v6l4 2M4 12a8 8 0 1016 0 8 8 0 00-16 0z"
         />
       </svg>
     ),
   },
 ]
 
-const courses = [
+const testimonials = [
   {
-    title: 'React Fundamentals',
-    category: 'Frontend',
-    description: 'Build modern interfaces with components, hooks, and routing.',
-    level: 'Beginner',
+    quote: 'CourseHub keeps my learning organized and helps me stay consistent.',
+    name: 'Aisha Rahman',
+    role: 'Product Designer',
   },
   {
-    title: 'UI Design Essentials',
-    category: 'Design',
-    description: 'Create clean, consistent layouts with typography and spacing.',
-    level: 'Intermediate',
+    quote: 'The courses are practical and easy to follow. I can track everything.',
+    name: 'Omar Khaled',
+    role: 'Frontend Developer',
   },
   {
-    title: 'Backend API Basics',
-    category: 'Backend',
-    description: 'Design reliable APIs with authentication and structured data.',
-    level: 'Beginner',
+    quote: 'Clean layout, clear progress, and great structure for busy schedules.',
+    name: 'Layla Hassan',
+    role: 'Student',
+  },
+]
+
+const pricingPlans = [
+  {
+    name: 'Basic',
+    price: '$19/mo',
+    features: ['Access to core courses', 'Weekly learning plan', 'Email support'],
+    ctaLabel: 'Choose Basic',
+  },
+  {
+    name: 'Pro',
+    price: '$39/mo',
+    features: ['Everything in Basic', 'Progress tracking', 'Priority support'],
+    ctaLabel: 'Choose Pro',
+    highlighted: true,
+  },
+  {
+    name: 'Premium',
+    price: '$59/mo',
+    features: ['Everything in Pro', 'Mentor sessions', 'Advanced projects'],
+    ctaLabel: 'Choose Premium',
   },
 ]
 
 function Home() {
   return (
     <div className="space-y-16 pb-12">
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-        <div
-          className="pointer-events-none absolute -left-24 top-8 h-56 w-56 rounded-full bg-blue-100/60 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-indigo-100/70 blur-3xl"
-          aria-hidden="true"
-        />
-        <Container className="py-12 sm:py-16 lg:py-20">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-500">
-                  CourseHub
-                </p>
-                <h1 className="text-4xl font-semibold text-slate-900 sm:text-5xl lg:text-6xl">
-                  Learn Skills That Move Your Career Forward
-                </h1>
-                <p className="text-base text-slate-600 sm:text-lg">
-                  Discover practical courses, expert content, and a simple dashboard to
-                  manage your learning journey.
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-4">
-                <Link
-                  to="/courses"
-                  className="rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"
-                >
-                  Explore Courses
-                </Link>
-                <Link
-                  to="/dashboard"
-                  className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:border-blue-200 hover:text-blue-600"
-                >
-                  View Dashboard
-                </Link>
-              </div>
-            </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg">
-              <div className="flex items-center justify-between">
-                <p className="text-sm text-slate-600">Active learners</p>
-                <p className="text-2xl font-semibold text-slate-900">12k+</p>
-              </div>
-              <div className="mt-6 border-t border-slate-200 pt-6">
-                <p className="text-sm text-slate-600">Popular courses</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {['Product Design', 'React', 'API Basics'].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-6 border-t border-slate-200 pt-6">
-                <p className="text-sm text-slate-600">Completion rate</p>
-                <div className="mt-3">
-                  <div className="flex items-center justify-between text-sm text-slate-700">
-                    <span>92% average</span>
-                    <span className="font-medium text-slate-900">+18%</span>
-                  </div>
-                  <div className="mt-3 h-2 rounded-full bg-slate-100">
-                    <div className="h-2 w-[92%] rounded-full bg-indigo-500" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <HeroSection
+        title="Learn Skills That Move Your Career Forward"
+        subtitle="Discover practical courses, expert content, and a simple learning experience built for modern students."
+        primaryLabel="Explore Courses"
+        primaryTo="/courses"
+        secondaryLabel="Learn More"
+        secondaryTo="/about"
+        stats={[
+          { label: 'Learners', value: '12K+' },
+          { label: 'Courses', value: '150+' },
+          { label: 'Completion Rate', value: '94%' },
+        ]}
+      />
 
       <section>
         <Container className="py-8">
@@ -174,20 +137,7 @@ function Home() {
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-md"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
-                    {feature.icon}
-                  </div>
-                  <h3 className="mt-5 text-lg font-semibold text-slate-900">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-600">
-                    {feature.description}
-                  </p>
-                </div>
+                <FeatureCard key={feature.title} {...feature} />
               ))}
             </div>
           </div>
@@ -197,41 +147,43 @@ function Home() {
       <section className="bg-white">
         <Container className="py-8">
           <div className="space-y-10">
-            <div className="flex flex-col gap-3 text-center">
+            <div className="text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-500">
-                Course Preview
+                Testimonials
               </p>
-              <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl">
-                Learn from curated tracks
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+                Learners love the experience
               </h2>
-              <p className="mx-auto max-w-2xl text-base text-slate-600">
-                Start with a focused path and grow confidently with structured lessons.
+              <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+                Join students who rely on CourseHub to stay organized and focused.
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
-              {courses.map((course) => (
-                <div
-                  key={course.title}
-                  className="flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="space-y-4">
-                    <span className="inline-flex w-fit rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-600">
-                      {course.category}
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-900">
-                        {course.title}
-                      </h3>
-                      <p className="mt-2 text-sm text-slate-600">
-                        {course.description}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-6 flex items-center justify-between text-sm text-slate-600">
-                    <span>{course.level}</span>
-                    <span className="font-semibold text-blue-600">View course</span>
-                  </div>
-                </div>
+              {testimonials.map((testimonial) => (
+                <TestimonialCard key={testimonial.name} {...testimonial} />
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container className="py-8">
+          <div className="space-y-10">
+            <div className="text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-500">
+                Pricing
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900 sm:text-4xl">
+                Choose the plan that fits
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600">
+                Flexible options for every learning pace, from self-study to guided growth.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {pricingPlans.map((plan) => (
+                <PricingCard key={plan.name} {...plan} />
               ))}
             </div>
           </div>
@@ -246,7 +198,7 @@ function Home() {
                 Start building your future today
               </h2>
               <p className="text-base text-slate-600">
-                Join CourseHub and organize your learning in one simple platform.
+                Join CourseHub and organize your learning journey in one simple platform.
               </p>
               <Link
                 to="/courses"
