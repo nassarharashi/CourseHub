@@ -6,7 +6,7 @@ import CourseList from '../components/CourseList'
 import CourseListSkeleton from '../components/CourseListSkeleton'
 import EmptyState from '../components/EmptyState'
 import ErrorState from '../components/ErrorState'
-import courseData from '../data/courses.json'
+import { loadCourses } from '../utils/courseStorage'
 
 const sortOptions = [
   { label: 'Price: Low to High', value: 'price-asc' },
@@ -25,9 +25,9 @@ function Courses() {
   useEffect(() => {
     let isMounted = true
 
-    const loadCourses = () => {
+    const loadCoursesData = () => {
       try {
-        const data = Array.isArray(courseData) ? courseData : []
+        const data = loadCourses()
 
         setTimeout(() => {
           if (!isMounted) {
@@ -46,7 +46,7 @@ function Courses() {
       }
     }
 
-    loadCourses()
+    loadCoursesData()
 
     return () => {
       isMounted = false

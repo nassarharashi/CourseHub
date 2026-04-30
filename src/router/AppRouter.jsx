@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Courses from '../pages/Courses'
 import CourseDetails from '../pages/CourseDetails'
+import Dashboard from '../pages/Dashboard'
 
 const EmptyPage = () => null
 
@@ -17,7 +18,7 @@ function AppRouter() {
           <Route path="/courses/:id" element={<CourseDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<EmptyPage />} />
-          <Route path="/dashboard" element={<EmptyPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

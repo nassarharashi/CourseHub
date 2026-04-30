@@ -3,13 +3,13 @@ import { Link, useParams } from 'react-router-dom'
 import Container from '../components/Container'
 import EmptyState from '../components/EmptyState'
 import CourseDetailsSkeleton from '../components/CourseDetailsSkeleton'
-import courseData from '../data/courses.json'
+import { loadCourses } from '../utils/courseStorage'
 
 function CourseDetails() {
   const [loading, setLoading] = useState(true)
   const { id } = useParams()
   const courseId = Number(id)
-  const course = courseData.find((item) => item.id === courseId)
+  const course = loadCourses().find((item) => item.id === courseId)
 
   useEffect(() => {
     const timer = setTimeout(() => {
