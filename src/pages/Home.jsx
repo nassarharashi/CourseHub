@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Container from '../components/Container'
 import HeroSection from '../components/HeroSection'
 import FeatureCard from '../components/FeatureCard'
 import TestimonialCard from '../components/TestimonialCard'
 import PricingCard from '../components/PricingCard'
+import HomeSkeleton from '../components/HomeSkeleton'
 
 const features = [
   {
@@ -104,6 +106,20 @@ const pricingPlans = [
 ]
 
 function Home() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 350)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <HomeSkeleton />
+  }
+
   return (
     <div className="space-y-16 pb-12">
       <HeroSection

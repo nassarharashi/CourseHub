@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "React Fundamentals",
+    "category": "Frontend",
+    "level": "Beginner",
+    "price": 49,
+    "rating": 4.7,
+    "description": "Learn the basics of React and component-based development."
+  },
+  {
+    "id": 2,
+    "title": "Advanced React Patterns",
+    "category": "Frontend",
+    "level": "Advanced",
+    "price": 89,
+    "rating": 4.9,
+    "description": "Master reusable patterns, hooks, and scalable UI architecture."
+  },
+  {
+    "id": 3,
+    "title": "Node API Foundations",
+    "category": "Backend",
+    "level": "Beginner",
+    "price": 59,
+    "rating": 4.6,
+    "description": "Build secure REST APIs with Node, Express, and best practices."
+  },
+  {
+    "id": 4,
+    "title": "Database Design Basics",
+    "category": "Backend",
+    "level": "Intermediate",
+    "price": 69,
+    "rating": 4.5,
+    "description": "Learn relational modeling, SQL fundamentals, and data structure."
+  },
+  {
+    "id": 5,
+    "title": "UI Design Essentials",
+    "category": "Design",
+    "level": "Beginner",
+    "price": 39,
+    "rating": 4.4,
+    "description": "Design clean, consistent interfaces with spacing and typography."
+  },
+  {
+    "id": 6,
+    "title": "Design Systems in Practice",
+    "category": "Design",
+    "level": "Advanced",
+    "price": 79,
+    "rating": 4.8,
+    "description": "Build scalable design systems for growing product teams."
+  },
+  {
+    "id": 7,
+    "title": "Programming with Python",
+    "category": "Programming",
+    "level": "Beginner",
+    "price": 45,
+    "rating": 4.6,
+    "description": "Learn Python fundamentals and solve real-world problems."
+  },
+  {
+    "id": 8,
+    "title": "Algorithms & Data Structures",
+    "category": "Programming",
+    "level": "Intermediate",
+    "price": 75,
+    "rating": 4.7,
+    "description": "Strengthen problem-solving with core algorithms and structures."
+  },
+  {
+    "id": 9,
+    "title": "Full-Stack Foundations",
+    "category": "Programming",
+    "level": "Intermediate",
+    "price": 99,
+    "rating": 4.8,
+    "description": "Connect frontend and backend skills with modern tooling."
+  }
+]

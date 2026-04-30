@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import Container from '../components/Container'
+import AboutSkeleton from '../components/AboutSkeleton'
 
 const values = [
   {
@@ -22,6 +24,20 @@ const team = [
 ]
 
 function About() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 350)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <AboutSkeleton />
+  }
+
   return (
     <div className="space-y-16 pb-12">
       <section>
