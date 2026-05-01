@@ -1,16 +1,101 @@
-# React + Vite
+# CourseHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="src/assets/logo.png" alt="CourseHub logo" width="96" height="96" />
+</p>
 
-Currently, two official plugins are available:
+CourseHub is a clean, responsive learning platform UI built with React and Vite. It focuses on course discovery, a practical dashboard experience, and polished content sections that feel consistent across the whole site.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+CourseHub is designed as a lightweight education website with a clear visual identity and simple navigation. It includes a branded home page, course browsing, a detail view for each course, a management dashboard, and a contact form with validation.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Key Features
 
-## Expanding the ESLint configuration
+- Branded landing page with logo-driven navigation and a hero section
+- Course listing with search, category filter, and skeleton loading states
+- Course details page for deeper course information
+- Dashboard with create, edit, and delete flows backed by `localStorage`
+- Contact form with validation and success feedback
+- Clean responsive layout with reusable UI components
+- Light-only styling for a consistent visual experience
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Pages
+
+- Home
+- About
+- Courses
+- Course Details
+- Dashboard
+- Contact
+
+## Tech Stack
+
+- React 19
+- Vite
+- React Router
+- Tailwind CSS
+
+## Visual Assets
+
+- Logo: `src/assets/logo.png`
+- Hero image: `src/assets/hero.png`
+
+## Project Structure
+
+```text
+src/
+  assets/
+  components/
+  data/
+  layout/
+  pages/
+  router/
+  utils/
+```
+
+## Getting Started
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+### Lint the Codebase
+
+```bash
+npm run lint
+```
+
+## Data Storage
+
+Course data is loaded from the built-in JSON dataset and synced with `localStorage` so dashboard changes persist between sessions.
+
+## Notes
+
+- The app is intentionally light-mode only.
+- Login and register pages were removed from the current version.
+- Course management actions are handled entirely on the client side.
+
+## Screenshots
+
+Add screenshots here if you want to document the UI in more detail.
