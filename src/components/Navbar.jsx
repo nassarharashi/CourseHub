@@ -12,16 +12,16 @@ const navLinks = [
 
 function Navbar() {
   const linkBase =
-    'text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400'
-  const linkActive = 'text-blue-600 dark:text-blue-400'
+    'text-sm font-medium text-slate-600 transition-colors hover:text-blue-600'
+  const linkActive = 'text-blue-600'
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur">
       <Container className="py-4">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="CourseHub logo" className="h-8 w-8" />
-            <span className="text-base font-semibold text-slate-900 dark:text-slate-100">
+            <span className="text-base font-semibold text-slate-900">
               CourseHub
             </span>
           </Link>

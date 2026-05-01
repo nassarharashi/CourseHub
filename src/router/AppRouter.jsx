@@ -5,8 +5,7 @@ import About from '../pages/About'
 import Courses from '../pages/Courses'
 import CourseDetails from '../pages/CourseDetails'
 import Dashboard from '../pages/Dashboard'
-
-const EmptyPage = () => null
+import Contact from '../pages/Contact'
 
 function AppRouter() {
   return (
@@ -17,7 +16,7 @@ function AppRouter() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:id" element={<CourseDetails />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<EmptyPage />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
