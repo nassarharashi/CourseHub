@@ -26,21 +26,29 @@ function Navbar() {
             </span>
           </Link>
           <nav aria-label="Primary">
-            <ul className="flex flex-wrap items-center gap-5">
-              {navLinks.map((link) => (
-                <li key={link.to}>
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) =>
-                      [linkBase, isActive ? linkActive : ''].join(' ').trim()
-                    }
-                    end={link.to === '/'}
-                  >
-                    {link.label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-wrap items-center gap-4">
+              <ul className="flex flex-wrap items-center gap-5">
+                {navLinks.map((link) => (
+                  <li key={link.to}>
+                    <NavLink
+                      to={link.to}
+                      className={({ isActive }) =>
+                        [linkBase, isActive ? linkActive : ''].join(' ').trim()
+                      }
+                      end={link.to === '/'}
+                    >
+                      {link.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/login"
+                className="rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 transition-colors hover:border-blue-300 hover:bg-blue-100"
+              >
+                Login
+              </Link>
+            </div>
           </nav>
         </div>
       </Container>
